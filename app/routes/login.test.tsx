@@ -3,7 +3,7 @@ import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { test } from "vitest";
 
-import { LoginForm } from "./login";
+import { default as Broken, LoginForm } from "./login";
 
 test("LoginForm renders error messages", async () => {
   const USER_MESSAGE = "Username is required";
@@ -12,7 +12,8 @@ test("LoginForm renders error messages", async () => {
   const Stub = createRoutesStub([
     {
       path: "/login",
-      Component: LoginForm,
+      Component: Broken,
+      // Component: LoginForm,
       action() {
         return {
           errors: {
