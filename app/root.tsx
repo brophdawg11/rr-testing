@@ -1,7 +1,5 @@
 import { Links, Meta, Outlet, Scripts, ScrollRestoration } from "react-router";
 
-import type { Route } from "./+types/root";
-
 export function Layout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
@@ -20,6 +18,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
   );
 }
 
-export default function App({}: Route.ComponentProps) {
+export default function App() {
   return <Outlet />;
 }
